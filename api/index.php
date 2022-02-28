@@ -2,6 +2,7 @@
 require_once('./db.php');
 require_once('./models/Chatsession.php');
 header('Access-Control-Allow-Origin: *');
+
 if (!isset($_GET['q'])) die('No specific API passed');
 
 
@@ -32,4 +33,5 @@ if($_GET['q'] === 'chatsession') {
             exit(json_encode($chatSession->read($_POST['firstname'], $_POST['lastname'], $_POST['email'])));
         }
     }
+    
 }

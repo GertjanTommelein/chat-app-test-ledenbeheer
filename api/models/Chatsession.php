@@ -24,7 +24,7 @@ class Chatsession {
     }
 
     public function create($firstname, $lastname, $email) {
-        $stmt = $this->conn->prepare('INSERT INTO chat_sessions (firstname, lastname, email, created_at) VALUES (?, ?, ?, NOW()');
+        $stmt = $this->conn->prepare('INSERT INTO chat_sessions (firstname, lastname, email, created_at) VALUES (?, ?, ?, NOW())');
         $stmt->bind_param('sss', $firstname, $lastname, $email);
         try {
             if($stmt->execute()) {
@@ -32,7 +32,7 @@ class Chatsession {
             }else {
                 throw new Exception('Failed to create chat session');
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             exit(json_encode(array('error' => $e->getMessage())));
         }
     }
@@ -50,6 +50,7 @@ class Chatsession {
             $this->lastname = $row['lastname'];
             $this->email = $row['email'];
             $this->created_at = $row['created_at'];
+            return $row;
         }else {
             // Session not found
             return false;
