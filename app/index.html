@@ -6,18 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat app Ledenbeheer</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
 </head>
 
 <body>
     <h1>Chat application Ledenbeheer</h1>
 
-    <div >
-        <form action="" id="sessionForm">
-            <input type="text" name="firstname" placeholder="firstname" required>
-            <input type="text" name="lastname" placeholder="lastname" required>
-            <input type="email" name="email" placeholder="email" required>
-            <input type="submit" name="submit" value="chat">
-        </form>
+    <div id="chat">
+
+            <div class="chat-header"><i id="chatClose" class="material-icons">close</i></div>
+            <div id="register">
+                <form action="" id="sessionForm">
+                    <input type="text" name="firstname" placeholder="firstname" required>
+                    <input type="text" name="lastname" placeholder="lastname" required>
+                    <input type="email" name="email" placeholder="email" required>
+                    <input type="submit" name="submit" value="chat">
+                </form>
+            </div>
+            <div class="chat-messages">
+                <div class="message-container align-left">
+                    <h6>Kevin</h6>
+                    <div class="chat-bubble">
+                        <p>How can we help you today?</p>
+                    </div>
+                </div>
+                <div class="message-container align-right">
+                    <div class="chat-bubble bg-blue">
+                        <p>How can we help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-textarea">
+                <textarea name="chatMessage" id="chatMessage"></textarea>
+            </div>
+        
+    </div>
+    <div id="chatButton">
+        <i class="material-icons">chat_bubble</i>
     </div>
 
 
