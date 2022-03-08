@@ -22,6 +22,9 @@ class Chatsession {
             'created_at' => $this->created_at,
         );
     }
+    public function getId() {
+        return $this->id;
+    }
 
     public function create($firstname, $lastname, $email) {
         $stmt = $this->conn->prepare('INSERT INTO chat_sessions (firstname, lastname, email, created_at) VALUES (?, ?, ?, NOW())');
